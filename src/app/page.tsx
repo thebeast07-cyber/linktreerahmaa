@@ -14,8 +14,28 @@ import {
   // faFacebook, // aktifkan kalau dipakai di LINKS
 } from '@fortawesome/free-brands-svg-icons';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+import type { IconProp } from '@fortawesome/fontawesome-svg-core'; // ⬅️ penting: tipe icon
 import { AnimatedBackground } from './components/AnimatedBackground';
 import { LINKS } from '../data/links';
+
+// Tipe LinkItem agar LINKS kuat dan autocomplete enak
+type LinkItem = {
+  href: string;
+  label: string;
+  icon: keyof typeof iconMap; // dideklarasikan ulang setelah iconMap ada
+};
+
+// Map ikon: gunakan IconProp, bukan any
+const iconMap: Record<string, IconProp> = {
+  youtube: faYoutube,
+  github: faGithub,
+  instagram: faInstagram,
+  tiktok: faTiktok,
+  twitch: faTwitch,
+  whatsapp: faWhatsapp,
+  // facebook: faFacebook,
+  globe: faGlobe,
+};
 
 export default function Home() {
   const [isClient, setIsClient] = useState(false);
@@ -24,17 +44,6 @@ export default function Home() {
   useEffect(() => {
     setIsClient(true); // pastikan render hanya di client untuk elemen custom
   }, []);
-
-  const iconMap: Record<string, any> = {
-    youtube: faYoutube,
-    github: faGithub,
-    instagram: faInstagram,
-    tiktok: faTiktok,
-    twitch: faTwitch,
-    whatsapp: faWhatsapp,
-    // facebook: faFacebook,
-    globe: faGlobe,
-  };
 
   return (
     <div className="min-h-screen flex flex-col relative" role="document">
@@ -89,7 +98,7 @@ export default function Home() {
                 Klik untuk order cepat / lihat portofolio 👇
               </p>
               <div className="mt-6 space-y-3">
-                {LINKS.map((item, idx) => (
+                {(LINKS as LinkItem[]).map((item, idx) => (
                   <a
                     key={idx}
                     href={item.href}
@@ -98,7 +107,10 @@ export default function Home() {
                     className="group flex items-center gap-3 w-full px-4 py-3 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition"
                   >
                     <span className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-black/40 group-hover:bg-black/50 transition">
-                      <FontAwesomeIcon icon={iconMap[item.icon]} className="text-xl" />
+                      <FontAwesomeIcon
+                        icon={iconMap[item.icon] ?? faGlobe}
+                        className="text-xl"
+                      />
                     </span>
                     <span className="font-medium">{item.label}</span>
                     <span className="ml-auto opacity-0 group-hover:opacity-100 text-sm text-gray-400 transition">
