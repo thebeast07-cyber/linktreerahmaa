@@ -1,7 +1,7 @@
-// src/types/custom-elements.d.ts
+// types/custom-elements.d.ts
 import type React from "react";
 
-export {}; // biar ini dianggap modul
+export {}; // penting: bikin file ini jadi "module"
 
 declare global {
   namespace JSX {
@@ -13,11 +13,9 @@ declare global {
         src?: string;
         autoplay?: boolean;
         loop?: boolean;
-        // opsional tambahan yang sering ada:
         background?: string;
         mode?: "normal" | "bounce";
         speed?: number;
-        // dll kalau perlu
       };
     }
   }
