@@ -7,7 +7,7 @@ export type LinkItem = {
 export const LINKS: LinkItem[] = [
   {
     label: 'WhatsApp — Order Rahma Seserahan',
-    href: 'https://wa.me/6282228132455?text=Halo%20Rahma%20Seserahan%2C%20saya%20mau%20tanya%20paket%20🙏',
+    href: 'https://wa.me/6281398590616?text=Halo%20Rahma%20Seserahan%2C%20saya%20mau%20tanya%20paket%20🙏',
     icon: 'whatsapp',
   },
   {
