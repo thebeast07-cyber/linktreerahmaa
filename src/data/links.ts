@@ -32,7 +32,7 @@ export const LINKS: LinkItem[] = [
   },
   {
     label: 'Lokasi (Google Maps)',
-    href: 'https://maps.google.com/?q=Perampelan%2C%20Gudang%20Sarimulyo%2C%20Sayung%2C%20Demak',
+    href: 'https://maps.app.goo.gl/nrVHxPg5fQaiwcE66',
     icon: 'globe',
   },
 ];
