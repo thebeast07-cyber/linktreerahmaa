@@ -48,23 +48,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col relative" role="document">
       {/* dotLottie web component */}
-      <Script
-        src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"
-        strategy="afterInteractive"
-        onLoad={() => setLottieReady(true)}
-      />
-
-      {/* 1) LOTTIE — FULLSCREEN, PALING BAWAH (client-only + script-ready) */}
-      {isClient && lottieReady && (
-        <div className="fixed inset-0 z-0 pointer-events-none" suppressHydrationWarning>
-          <dotlottie-player
-            src="https://lottie.host/ea7a0c64-cdda-4ab5-a0fc-0fbea79254e2/p9CwaW5otw.lottie"
-            autoplay
-            loop
-            style={{ width: '100%', height: '100%', opacity: 1 }}
-          ></dotlottie-player>
-        </div>
-      )}
+    
 
       {/* 2) ANIMATED BACKGROUND — FULLSCREEN, DI ATAS LOTTIE */}
       <div className="fixed inset-0 z-10 pointer-events-none">
