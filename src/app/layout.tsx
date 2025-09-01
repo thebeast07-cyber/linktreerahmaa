@@ -7,8 +7,8 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Kenee Universe | Link in Bio',
-  description: 'Semua link penting—Nailun Najah & Kenee Universe (TikTok, IG, YouTube, Shopee, WhatsApp).',
+  title: 'Rahma Universe | Link in Bio',
+  description: 'Semua link Rahma Universe (TikTok, IG, YouTube, Shopee, WhatsApp).',
 };
 
 export default function RootLayout({
