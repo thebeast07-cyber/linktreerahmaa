@@ -16,17 +16,17 @@ export const LINKS: LinkItem[] = [
     icon: 'instagram',
   },
   {
-    label: 'TikTok — (placeholder)',
+    label: 'TikTok — Coming Soon',
     href: 'https://www.tiktok.com/', // ganti nanti kalau akun sudah siap
     icon: 'tiktok',
   },
   {
-    label: 'Facebook — (placeholder)',
+    label: 'Facebook — Coming Soon',
     href: 'https://facebook.com/', // ganti nanti kalau akun sudah siap
     icon: 'facebook',
   },
   {
-    label: 'Shopee — (placeholder)',
+    label: 'Shopee — Coming Soon',
     href: 'https://shopee.co.id/', // ganti nanti kalau toko sudah siap
     icon: 'globe',
   },
